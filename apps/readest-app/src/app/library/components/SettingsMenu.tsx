@@ -193,7 +193,7 @@ const SettingsMenu: React.FC<SettingsMenuProps> = ({ onPullLibrary, setIsDropdow
 
     if (requestAlwaysInForeground) {
       let permission = await invoke<Permissions>('plugin:native-tts|checkPermissions');
-      if (permission.postNotification !== 'granted') {
+      if (permission['postNotification'] !== 'granted') {
         permission = await invoke<Permissions>('plugin:native-tts|requestPermissions', {
           permissions: ['postNotification'],
         });
