@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import { useRouter } from 'next/navigation';
 import { PiGear, PiMoon, PiSun } from 'react-icons/pi';
 import { TbSunMoon } from 'react-icons/tb';
 import { invoke } from '@tauri-apps/api/core';
@@ -37,7 +36,6 @@ type Permissions = {
 
 const SettingsMenu: React.FC<SettingsMenuProps> = ({ onPullLibrary, setIsDropdownOpen }) => {
   const _ = useTranslation();
-  const router = useRouter();
   const { envConfig, appService } = useEnv();
   const { themeMode, setThemeMode } = useThemeStore();
   const { settings, setSettingsDialogOpen } = useSettingsStore();
